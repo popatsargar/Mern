@@ -5,7 +5,14 @@ const obj={
 }
 console.log(obj.property3);
 console.log(obj[1]);
+//another way of creating an object
+const newObj = new Object();
+newObj.a = "a";
+newObj.b = "b";
+newObj.c = "c";
+newObj.d = "d";
 
+console.log({newObj});
 //key can have array value
 obj.arrPropery=[1,2,3,4,5]
 for(let i of obj.arrPropery)
@@ -70,7 +77,7 @@ console.log(line.toUpperCase());
 const string="vaibhav";
 const number=67;
 const bool=true;
-const obj={
+const object={
     name:"vaibhav"
 };
 console.log(string.__proto__);
@@ -87,12 +94,12 @@ console.log(Number("123"));
 function addStudent (students, ...studentsNames){
     console.log(studentsNames);// prints array
     for(let student of studentsNames)
-        student.push(student);
+        students.push(student);
         console.log({students});
         
     
 }
-const student=['abb','bcc','cdd'];
+const students=['abb','bcc','cdd'];
 addStudent(students,"abhi","rishi","om");
 
 //destructuring
