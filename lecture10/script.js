@@ -17,7 +17,7 @@ function toCamelCase(text) {
 console.log("string in camelcase is: ",toCamelCase(str));  
 
 function toSnakeCase (){
-    console.log("the string in snakecase is: ",str.trim().replaceAll(" ","_"));
+    console.log("the string in snakecase is: ",str.trim().replaceAll("_",""));
 }
 toSnakeCase(str);
 
@@ -100,4 +100,3 @@ console.log("non repeating char:",nonRepeatingChar(str2));
 
 /* home work que-> string ="Hi im Vaibhav"
 op=iH iM vaibhaV*/
- 
