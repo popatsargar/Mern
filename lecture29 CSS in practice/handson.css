@@ -54,6 +54,7 @@
   padding: 15px;
   gap: none;
   background-color: antiquewhite;
+  position: 10px;
 }
 
 .card img {

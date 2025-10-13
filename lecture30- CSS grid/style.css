@@ -1,0 +1,35 @@
+ body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+ .grid {
+    width: 60vw;
+    height: 70vh;
+    border: 1px solid aquamarine;
+    display: grid;
+    /*grid-template-columns: 100px 100px;/* column wise 100 px box*/
+   /* grid-template-columns: 50% 200px 100px; it gives first value as according to screen*/
+    /*grid-template-columns: repeat(3, 30%);-> it devide the div in 3 equal parts and remaining is blank*/
+    /*grid-template-columns: 1fr 1fr 2fr;-> it divides the columnwise fraction size of div*/
+    grid-template-columns: minmax(50px, 200px)400px ;/* minimum shrink of this div or column and maximum expand of column*/
+    /*grid-template-rows: 1fr 4fr 1fr;->we want add values as how many div are in grid*/
+}
+ .red {
+    background-color: red;
+ }
+ .blue {
+    background-color: blue;
+ }
+ .green {
+    background-color: green;
+ }
+ .orange {
+    background-color: orange;
+ }
+ .pink {
+    background-color: pink;
+ }
+ .brown {
+    background-color: brown;
+ }
