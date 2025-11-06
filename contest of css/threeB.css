@@ -1,0 +1,59 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "a . ."
+    ". b ."
+    ". . c";
+}
+
+/* Banner base styles */
+.banner {
+  width: 100px;
+  height: 100px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* Banner A (Top-Left) */
+.a {
+  grid-area: a;
+  background-color: #007bff;
+  justify-self: start;
+  align-self: start;
+}
+
+/* Banner B (Center) */
+.b {
+  grid-area: b;
+  background-color: #28a745;
+  justify-self: center;
+  align-self: center;
+}
+
+/* Banner C (Bottom-Right) */
+.c {
+  grid-area: c;
+  background-color: #dc3545;
+  justify-self: end;
+  align-self: end;
+}

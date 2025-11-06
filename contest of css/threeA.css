@@ -1,0 +1,54 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Flex container */
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Spread A and C horizontally */
+  align-items: flex-start;        /* Align items to the top */
+  height: 100vh;                  /* Full viewport height */
+  position: relative;             /* Needed for centered B */
+}
+
+/* Banner base styles */
+.banner {
+  width: 100px;
+  height: 100px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* Banner A (Top-Left) */
+.a {
+  background-color: #007bff;
+  align-self: flex-start;
+}
+
+/* Banner B (Center) */
+.b {
+  background-color: #28a745;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Banner C (Bottom-Right) */
+.c {
+  background-color: #dc3545;
+  align-self: flex-end;
+  margin-left: auto;
+}

@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div {
+    text-align: center;
+}
+div > div {
+    display: inline-block;
+    width: 300px;
+    height: 400px;
+    background-color: yellow;
+}
+.linear div:nth-of-type(1) {
+    background: linear-gradient(to right, red, blue);
+}
+.linear div:nth-of-type(2) {
+     background: linear-gradient(
+    orange 33.33%, 
+    white 33.33%, 
+    white 66.66%, 
+    green 66.66%)
+}
+.linear div:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 125px;
+  height: 125px;
+  background: repeating-conic-gradient(blue 0deg 3.5deg, white 7.5deg 15deg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.linear div:nth-of-type(3) {
+    background: linear-gradient(256deg, red,green,grey,black);
+}
+.radial div:nth-of-type(1){
+    background: radial-gradient(rgb(241, 23, 34),rgb(244, 239, 242),rgb(151, 20, 24));
+}
+ 
+.radial div:nth-of-type(2){
+    background: radial-gradient(closest-side,rgb(18, 18, 18),rgb(47, 192, 88),rgb(151, 20, 24));
+}
+.radial div:nth-of-type(3){
+    background: radial-gradient(farthest-side,rgb(241, 23, 34)20%,rgb(244, 239, 242)80%,rgb(151, 20, 24));
+}
+.conic div:nth-of-type(1){
+   background: repeating-conic-gradient(red 0deg 30deg, yellow 30deg 60deg);
+
+
+}
+.conic div:last-child {
+   background: conic-gradient(
+  red 0deg,
+  yellow 120deg,
+  green 240deg,
+  red 360deg
+);
+
+}
+.conic div:nth-of-type(2){
+    background: conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
+
+}
+ @keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.loader {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
+  animation: spin 0s linear infinite;
+  will-change:initial inherit;
+}
+
