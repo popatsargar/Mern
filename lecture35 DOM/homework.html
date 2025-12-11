@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML + CSS + JS Learning Project</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* ---------- Common Styles ---------- */
+section {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+h2 {
+  color: #333;
+  border-left: 5px solid #00b894;
+  padding-left: 10px;
+}
+button {
+  background: #0984e3;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button:hover { background: #74b9ff; }
+
+/* ---------- 1. Keyframes ---------- */
+.box {
+  width: 80px;
+  height: 80px;
+  background: tomato;
+  position: relative;
+  animation: moveBox 3s infinite;
+}
+@keyframes moveBox {
+  0%   { left: 0px; background: tomato; }
+  50%  { left: 200px; background: gold; }
+  100% { left: 0px; background: tomato; }
+}
+
+/* ---------- 2. SVG ---------- */
+svg {
+  border: 1px solid #ccc;
+}
+
+/* ---------- 3. Animation Delay/Duration ---------- */
+.ball {
+  width: 50px;
+  height: 50px;
+  background: crimson;
+  border-radius: 50%;
+  position: relative;
+  animation: bounce 2s ease-in-out 1s infinite;
+}
+@keyframes bounce {
+  0%   { top: 0px; }
+  50%  { top: 100px; }
+  100% { top: 0px; }
+}
+
+/* ---------- 6. classList ---------- */
+.boxToggle {
+  width: 100px;
+  height: 100px;
+  background: gray;
+  transition: background 0.5s;
+}
+.active {
+  background: limegreen;
+}
+</style>
+</head>
+<body>
+
+<h1>✨ Mini Learning Project: HTML, CSS, JS Basics ✨</h1>
+
+<!-- 1. KEYFRAMES EXAMPLE -->
+<section>
+  <h2>1️⃣ Keyframes in Percentage</h2>
+  <p>This red box moves left and right using <b>@keyframes</b> with percentages (0%, 50%, 100%).</p>
+  <div class="box"></div>
+</section>
+
+<!-- 2. SVG SHAPES -->
+<section>
+  <h2>2️⃣ SVG (Circle, Rectangle, and Line)</h2>
+  <p>SVG lets you draw shapes using code — scalable without losing quality.</p>
+  <svg width="220" height="120" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="80" height="50" fill="skyblue" />
+    <circle cx="150" cy="35" r="25" fill="orange" />
+    <line x1="10" y1="90" x2="200" y2="90" stroke="green" stroke-width="4" />
+  </svg>
+</section>
+
+<!-- 3. ANIMATION DELAY + DURATION -->
+<section>
+  <h2>3️⃣ Animation Delay and Duration</h2>
+  <p>The ball waits 1 second before starting to bounce. It takes 2 seconds per bounce.</p>
+  <div class="ball"></div>
+</section>
+
+<!-- 4. SETATTRIBUTE -->
+<section>
+  <h2>4️⃣ setAttribute() Example</h2>
+  <p>Click the button to change the circle’s color and size using <b>setAttribute()</b>.</p>
+  <svg width="150" height="100">
+    <circle id="myCircle" cx="60" cy="50" r="30" fill="blue"></circle>
+  </svg>
+  <br>
+  <button onclick="changeColor()">Change Color</button>
+</section>
+
+<!-- 5. INNERHTML vs TEXTCONTENT -->
+<section>
+  <h2>5️⃣ innerHTML vs textContent</h2>
+  <p>Click the buttons to see the difference between showing <b>HTML code</b> and <b>plain text</b>.</p>
+  <div id="demo" style="padding:10px;border:1px solid #ccc;"></div>
+  <button onclick="useInnerHTML()">Use innerHTML</button>
+  <button onclick="useTextContent()">Use textContent</button>
+</section>
+
+<!-- 6. CLASSLIST vs CLASSNAME -->
+<section>
+  <h2>6️⃣ classList vs className</h2>
+  <p>Click to toggle the box color using <b>classList.toggle()</b>.</p>
+  <div id="myBox" class="boxToggle"></div>
+  <br>
+  <button onclick="toggleColor()">Toggle Color</button>
+</section>
+
+<!-- JavaScript Section -->
+<script>
+function changeColor() {
+  const circle = document.getElementById("myCircle");
+  circle.setAttribute("fill", "orange");
+  circle.setAttribute("r", "40");
+}
+
+function useInnerHTML() {
+  document.getElementById("demo").innerHTML = "<b>Hello</b> World!";
+}
+
+function useTextContent() {
+  document.getElementById("demo").textContent = "<b>Hello</b> World!";
+}
+
+function toggleColor() {
+  const box = document.getElementById("myBox");
+  box.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

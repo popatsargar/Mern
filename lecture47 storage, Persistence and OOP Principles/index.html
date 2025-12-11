@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+<body>
+    <textarea></textarea>
+    
+</body>
+<script>
+    
+    const autoSaveKey = "autoSaveKey";
+    const textarea = document.querySelector("textarea");
+    textarea.value = localStorage.getItem(autoSaveKey);
+    textarea.addEventListener("input",()=>{
+        const newValue = textarea.value;
+        localStorage.setItem(autoSaveKey,newValue);
+    })
+    
+    let arr = [1,2,3,4];
+    localStorage.setItem("arr", arr.join(" "));
+    localStorage.getItem("arr").split(" ");
+    console.log(arr);
+    const obj = {
+        name: "sp",
+        age:23
+    }
+    const objInstring = JSON.stringify(obj);
+    localStorage.setItem("obj",objInstring);
+    console.log(JSON.parse(localStorage.getItem("obj")));
+
+</script>
+</html>

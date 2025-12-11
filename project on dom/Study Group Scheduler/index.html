@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Group Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <h2>Users</h2>
+        <form id="userForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="subjects" placeholder="Subjects (comma separated)">
+            <button type="submit">Add User</button>
+        </form>
+        <ol id="userList"></ol>
+    </aside>
+    <main class="main">
+        <section class="session-section">
+            <h2>Create Study Session</h2>
+            <form id="sessionForm">
+                <input type="text" id="sessionSubject" placeholder="Subject" required>
+                <input type="date" id="sessionDate" required>
+                <input type="time" id="sessionTime" required>
+                <input type="number" id="max" min="1" placeholder="Max Participants" required>
+                <button id="session-btn" type="submit">Create Session</button>
+            </form>
+        </section>
+        <section>
+            <h2>All Sessions</h2>
+            <table class="sessionTable">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Participants</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="sessionBody"></tbody>
+            </table>
+        </section>
+    </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

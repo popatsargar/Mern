@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+ 
+
+.container {
+    display: flex;
+}
+ 
+.sidebar {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar input, .sidebar button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#userList {
+    margin-top: 10px;
+}
+
+#userList li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+ 
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+.session-section form input,
+.session-section form button {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+.sessionTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.sessionTable th, .sessionTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+ 

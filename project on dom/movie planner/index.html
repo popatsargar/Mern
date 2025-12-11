@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Night Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Night Planner</h1>
+        <button id="loginBtn">Login</button>
+        <span id="currentUser"></span>
+    </header>
+    <aside id="userSidebar">
+        <h3>Users</h3>
+        <ul id="userList">
+            <li>Rahul</li>
+            <li>Priya</li>
+            <li>Sam</li>
+        </ul>
+    </aside>
+    <main>
+        <section id="formSection">
+            <h2>Suggest a Movie</h2>
+            <form id="movieForm">
+                <input type="text" placeholder="Your Name">
+                <input type="text" placeholder="Movie Title">
+                <select>
+                    <option disabled selected>Select Genre</option>
+                    <option>Action</option>
+                    <option>Comedy</option>
+                    <option>Drama</option>
+                    <option>Horror</option>
+                    <option>Sci-Fi</option>
+                    <option>Romance</option>
+                </select>
+                <input type="number" placeholder="Duration (min)">
+                <div class="platforms">
+                    <label><input type="checkbox"> Netflix</label>
+                    <label><input type="checkbox"> Prime</label>
+                    <label><input type="checkbox"> Disney+</label>
+                    <label><input type="checkbox"> YouTube</label>
+                </div>
+                <input type="number" placeholder="Release Year">
+                <button type="button">Add Movie</button>
+            </form>
+        </section>
+        <section id="controls">
+            <h2>Filter & Sort</h2>
+            <select>
+                <option value="">All Genres</option>
+                <option>Action</option>
+                <option>Comedy</option>
+                <option>Drama</option>
+                <option>Horror</option>
+                <option>Sci-Fi</option>
+                <option>Romance</option>
+            </select>
+            <input type="text" placeholder="Search title">
+            <button>Sort by Votes</button>
+            <button>Sort by Duration</button>
+            <button>Sort by Recent</button>
+        </section>
+        <section id="movieListSection">
+            <h2>Suggested Movies</h2>
+
+            <div id="movieList">
+
+                <div class="movie-card">
+                    <h3>Inception</h3>
+                    <p>Genre: Sci-Fi</p>
+                    <p>Duration: 148 min</p>
+                    <p>Suggested by: Rahul</p>
+                    <p>Votes: 5</p>
+                    <button>Upvote</button>
+                    <button>Downvote</button>
+                    <button>Remove</button>
+                    <button>Watch Now</button>
+                </div>
+                <div class="movie-card">
+                    <h3>Joker</h3>
+                    <p>Genre: Drama</p>
+                    <p>Duration: 122 min</p>
+                    <p>Suggested by: Priya</p>
+                    <p>Votes: 12</p>
+                    <button>Upvote</button>
+                    <button>Downvote</button>
+                    <button>Remove</button>
+                    <button>Watch Now</button>
+                </div>
+            </div>
+        </section>
+        <section id="historySection">
+            <h2>Watch History</h2>
+            <div id="historyList">
+                <div class="movie-card">
+                    <h3>Avengers Endgame</h3>
+                    <p>Watched on: 2024</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <h2>Tonight's Pick</h2>
+            <p>Inception</p>
+            <button>Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

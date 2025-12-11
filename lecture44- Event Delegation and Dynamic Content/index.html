@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        body {
+            margin: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">Child </div>
+    </div>
+    
+    <script>
+        const parent = document.querySelector(".parent");
+        const child = document.querySelector(".child");
+        parent.addEventListener("click",(event)=>{
+           // event.stopPropagation();-> stops the flow of propagation which os child to parent and parent to child
+            console.log("parent clicked");
+        },{capture:true});
+        child.addEventListener("click",(event)=>{
+            event.stopImmediatePropagation();//->stops all the event after all these events trigger after all child will stop not trigger
+            console.log("target", event.target);//event which has triggered the event, will be last child of thus parent 
+            console.log("parentCurrent",event.currentTarget);//element that has captured the event i.e. element on which this current parent
+
+
+            console.log("child clicked");
+        },{capture:true});
+             child.addEventListener("click",(event)=>{
+            console.log("child clicked twice");
+        },{capture:true});
+
+        function greetMe(greeting){
+            console.log(greeting+" "+this.name);
+        }
+        const person ={
+            name: "sp",
+        }
+        greetMe.call(person,"hello");
+
+        greetMe.apply(person,["hey"]);
+
+        const greetPerson = greetMe.bind(person,"bye");
+        greetPerson();
+
+    </script>
+</body>
+</html>

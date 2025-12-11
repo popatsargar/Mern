@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile Form</title>
+
+    <style>
+      .educational,
+      .experience {
+        display: none;
+      }
+      .form section {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Profile Information Form</h2>
+
+    <form class="form">
+      <div class="personal">
+        <h1>Introduction</h1>
+
+        <label>Full Name:</label>
+        <input type="text" name="name" /> <br /><br />
+
+        <label>Email:</label>
+        <input type="email" name="email" /><br /><br />
+
+        <button type="button" class="next1">Next</button>
+      </div>
+
+      <div class="educational">
+        <h1>Education Details</h1>
+
+        <label>Highest Qualification:</label>
+        <input type="text" name="qualification" /><br /><br />
+
+        <label>College Name:</label>
+        <input type="text" name="college" /><br /><br />
+
+        <button type="button" class="prev1">Prev</button>
+        <button type="button" class="next2">Next</button>
+      </div>
+      <div class="experience">
+        <h1>Experience Details</h1>
+
+        <label>Company Name:</label>
+        <input type="text" name="company" /><br /><br />
+
+        <label>Job Title:</label>
+        <input type="text" name="job" /><br /><br />
+
+        <label>Work Summary:</label><br />
+        <textarea name="summary"></textarea><br />
+
+        <button type="button" class="prev2">Prev</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <script>
+      const personal = document.querySelector(".personal");
+      const educational = document.querySelector(".educational");
+      const experience = document.querySelector(".experience");
+      const next1 = document.querySelector(".next1");
+      const next2 = document.querySelector(".next2");
+      const prev1 = document.querySelector(".prev1");
+      const prev2 = document.querySelector(".prev2");
+      next1.addEventListener("click", () => {
+        personal.style.display = "none";
+        educational.style.display = "block";
+      });
+      next2.addEventListener("click", () => {
+        educational.style.display = "none";
+        experience.style.display = "block";
+      });
+      prev1.addEventListener("click", () => {
+        educational.style.display = "none";
+        personal.style.display = "block";
+      });
+      prev2.addEventListener("click", () => {
+        experience.style.display = "none";
+        educational.style.display = "block";
+      });
+      
+    </script>
+  </body>
+</html>
